@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+   <style>
+    .register-photo {
+  background:#f1f7fc;
+  padding:80px 0;
+}
+
+.register-photo .image-holder {
+  display:table-cell;
+  width:auto;
+  background:url("https://www.kongu.ac.in/webalbum/img/mba.jpg");
+  background-size:cover;
+}
+
+.register-photo .form-container {
+  display:table;
+  max-width:900px;
+  width:90%;
+  margin:0 auto;
+  box-shadow:1px 1px 5px rgba(0,0,0,0.1);
+}
+
+.register-photo form {
+  display:table-cell;
+  width:400px;
+  background-color:#ffffff;
+  padding:40px 60px;
+  color:#000a14;
+}
+
+@media (max-width:991px) {
+  .register-photo form {
+    padding:40px;
+  }
+}
+
+.register-photo form h2 {
+  font-size:24px;
+  line-height:1.5;
+  margin-bottom:30px;
+}
+
+.register-photo form .form-control {
+  background:#b1caef;
+  border:none;
+  border-bottom:1px solid #2c82ec;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+  text-indent:6px;
+  height:40px;
+}
+
+.register-photo form .form-check {
+  font-size:13px;
+  line-height:20px;
+}
+
+.register-photo form .btn-primary {
+  background:#f4476b;
+  border:none;
+  border-radius:4px;
+  padding:11px;
+  box-shadow:none;
+  margin-top:35px;
+  text-shadow:none;
+  outline:none !important;
+}
+
+.register-photo form .btn-primary:hover, .register-photo form .btn-primary:active {
+  background:#eb3b60;
+}
+
+.register-photo form .btn-primary:active {
+  transform:translateY(1px);
+}
+
+.register-photo form .already {
+  display:block;
+  text-align:center;
+  font-size:12px;
+  color:#6f7a85;
+  opacity:0.9;
+  text-decoration:none;
+}
+
+
+   </style>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   
+</head>
+
+<body>
+    <div class="register-photo">
+        <div class="form-container">
+            <div class="image-holder"></div>
+            <form action="/new/create" method="post">
+                <h2 class="text-center"><strong>Create</strong> an account.</h2>
+                <div class="form-group"><input class="form-control" type="text"  name="studentname"placeholder="Name"></div>
+                <div class="form-group"><input class="form-control" type="text" name="studentrollno" placeholder="Rollno"></div>
+                <div class="form-group"><input class="form-control" type="date" name="studentDOB" placeholder="DOB"></div>
+                <div class="form-group"><input class="form-control" type="email" pattern=".+@kongu\.edu" name="studentemail" placeholder="Email"><br>
+                <p>Please enter college mail id</p></div>
+                <div class="form-group"><input class="form-control" type="password" name="studentpassword" placeholder="Password "></div>
+                <div class="form-group"><label class="form-control"  name="studepart" placeholder="Department"> Department
+               
+                <select name="studepart" id="dep">
+                  <option class="form-control" value="MSC">MSC  </option>
+                  <option class="form-control" >BSC</option>
+                  <option class="form-control" >CSE</option>
+                  <option class="form-control" >FT</option>
+                 
+                </select></div>
+                <div class="form-group"><label class="form-control"  name="studentregulation" placeholder="Reulations"> Regulations
+               
+                    <select name="text" id="dep">
+                      <option class="form-control" >2011</option>
+                      <option class="form-control" >2014</option>
+                      <option class="form-control" >2018</option>
+                      <option class="form-control" >2020</option>
+                      <option class="form-control" >2022</option>
+                    </select></div>
+                    <div class="form-group">
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
+                </div>
+                <div class="form-group"><a href="/new/create"><button class="btn btn-primary btn-block" id="submit" type="submit">Sign Up</button></a></div></form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KEC | <%= title %></title>
+  </head>
+  <body>
+    <form action="/new/create" method="POST">
+      <label for="studentname">Name:</label>
+      <input
+        name="studentname"
+        type="text"
+        placeholder="Enter your Name"
+        required
+      /><br />
+
+      <label for="studentrollno">Roll no:</label>
+      <input
+        name="studentrollno"
+        type="text"
+        placeholder="Enter your Roll no"
+        required
+      /><br />
+      <label for="studentemail">Email:</label>
+      <input
+        name="studentemail"
+        type="text"
+        placeholder="Enter your college mail"
+        required
+      /><br />
+      <label for="studentpassword">password:</label>
+      <input
+        name="studentpassword"
+        type="password"
+        placeholder="Enter your password"
+        required
+      /><br />
+      <label for="studentDOB">DOB:</label>
+      <input
+        name="studentDOB"
+        type="date"
+        placeholder="Enter your Dob"
+        required
+      /><br />
+
+      <label for="studepart">Department:</label>
+      <select name="studepart" id="">
+        <option value="civil">civil</option>
+        <option value="mechanical">mechanical</option>
+        <option value="mechatronics">mechatronics</option>
+        <option value="ece">ece</option>
+        <option value="cse">cse</option>
+        <option value="foodtech">foodtech</option>
+        <option value="it">it</option>
+        <option value="chemical">chemical</option>
+        <option value="ctug">ctug</option>
+        <option value="ctpg">ctpg</option>
+        <option value="mca">mca</option>
+        <option value="mba">mba</option>
+        <option value="eee">eee</option></select
+      ><br />
+
+      <a href="/new/create"><button type="submit">Submit</button></a>
+    </form>
+  </body>
+</html> -->
